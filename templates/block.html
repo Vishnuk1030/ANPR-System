@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: black;
+            font-family: monospace;
+            text-align: center;
+        }form{
+            margin: 0 auto;
+            width: 50%;
+            border-collapse: collapse;
+            border-radius: 20px;
+            background-color: white;
+            color: rgb(190, 10, 25);
+            padding: 15px;
+            text-shadow: rgb(0, 17, 255) 1px 1px 20px;
+        }
+        input{
+            margin: 0 auto;
+            text-align: center;
+            border-color: rgb(255, 0, 0);
+            box-sizing: 10px;
+            border-radius: 10px;
+            font-family: monospace;
+            text-shadow: black 0px 0px 10px;
+        }
+        button{
+            margin: 0 auto;
+            border-radius: 10px;
+            font-family: monospace;
+            text-shadow: black 0px 0px 10px;
+        }
+        h1{
+            text-align: center;
+            width: 60%;
+            background-color: skyblue;
+            font-family: monospace;
+            color: white;
+            padding: 10px;
+            margin: 0 auto;
+            border-radius: 20px;
+            text-shadow: black 0px 0px 10px;
+        }
+        table{
+            margin: 10px;
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            border-radius: 20px;
+            background-color: white;
+            color: rgb(190, 10, 25);
+            padding: 20px;
+            text-shadow: rgb(0, 17, 255) 1px 1px 20px;
+        }
+        tr{
+            margin: 0 auto;
+            border-radius: 20px;
+            font-family: monospace;
+            text-shadow: black 0px 0px 10px;
+        }
+        th{
+            text-align: center;
+            margin: 0 auto;
+            border-radius:20px;
+            color: green;
+            font-family: monospace;
+            padding: 20px;
+            text-shadow: black 0px 0px 10px;
+        }
+        td{
+            margin: 0 auto;
+            text-align: center;
+            border-color: rgb(255, 0, 0);
+            font-family: monospace;
+            text-shadow: black 0px 0px 10px;
+            padding: 15px;
+        }
+    </style>
+    <title>BLOCK LIST</title>
+</head>
+<body>
+    <h1>BLOCK LIST</h1>
+    <br>
+    <br>
+    <form action="/block" method="post">
+        <input type="text" name="block" placeholder="Enter Block Number">
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Vehicle Number</th>
+                <th>Location</th>
+                <th>latitude</th>
+                <th>langtidue</th>
+                <th>Map</th>
+            </tr>
+        <tr>
+        {% for row in results %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>
+                <form action="/map" method="POST"><input type="hidden" name="vno" value="{{ row[0] }}"><input type="submit" value="View on Map"></form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

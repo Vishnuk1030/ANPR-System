@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Add Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='./style.css')}}"  />
+    <!--<script src="{{ url_for('static', filename='./index.js')}}"></script>
+
+    <script src="/static/index.js"></script>
+    -->
+    <script>
+      // Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  const uluru = { lat: 11.127123 , lng: 78.656891 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 7,
+    center: uluru,
+  });
+  // The marker, positioned at Uluru
+  {% for row in page_data %}
+  const marker = new google.maps.Marker({
+    position: {lat: {{ row[2] }}, lng: {{ row[3] }} },
+    map: map,
+  });
+  {% endfor %}
+}
+
+window.initMap = initMap;
+    </script>    
+  </head>
+  <body>
+    <h3>Google Maps Trace </h3>
+    <!--The div element for the map -->
+<br>
+    <div id="map"></div>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcrwj08UXzT5i4VPTiKo7Oaf1EtkE3isk&callback=initMap&v=weekly"
+      defer
+    ></script>
+  </body>
+</html>

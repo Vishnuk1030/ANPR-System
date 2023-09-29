@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}" />
+    <script type="module" src="{{ url_for('static', filename='index.js') }}"></script>
+  </head>
+  <body>
+    <h3>Search your number: </h3>
+    <!-- place label  -->
+    <br>
+    <br>
+    <br>
+    <form action="/add" method="post" style="border-radius: 2px; border: 2px; box-shadow: black;">
+    <label for="text">Number: </label>
+    <input type="text" id="Vehno" name="Vehno" placeholder="Enter your Vichle number" />
+    <br>
+    <br>
+    <label for="text">Location: </label>
+    <input type="text" id="Location" name="Location" Placeholder="Enter your Location" />
+    <br>
+    <br>
+    <input type="submit" value="submit"/>
+    </form>
+  </body>
+</html>

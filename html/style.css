@@ -1,0 +1,98 @@
+/* Set the size of the div element that contains the map */
+#map {
+  /* Set the size of the div element that contains the map */ 
+  /* aligin-items: center; */
+  /* justify-content: center; */
+  padding : 10px;
+    width: 80%;
+    height: 80%;
+    /* background-color: #ccc; */
+    /*set the shawdow of the map*/
+    box-shadow: 0px 0px 10px purple;
+    /* set map to center of the page */
+    /* set curved corners of the map */
+    border-radius: 10px;
+    margin: 0 auto;
+    /* The height is 400 pixels */
+    /* The width is the width of the web page */
+  }
+  /* set h3 color green */
+  h3 {
+    color: red;
+  /* add some padding */
+  width: 80%;
+  margin: 10 auto;
+
+  padding: 10px;
+  /* set the background color to light green */
+  background-color: rgb(185, 17, 157);
+  /* set the border to green */
+  border: 1px solid blueviolet;
+  /* set the border radius to 10px */
+  border-radius: 10px;
+  /* set the font size to 20px */
+  font-size: 20px;
+  /* set the font weight to bold */
+  font-weight: bold;
+  /* set the text align to center */
+  text-align: center;
+  /* set the font family to arial */
+  font-family: arial;
+  /* set the font style to italic */
+  font-style: italic;
+  /* set the text decoration to underline */
+  text-decoration: underline;
+  /* set the text transform to uppercase */
+  text-transform: uppercase;
+  /* set the text shadow to black */
+  text-shadow: black 5px 5px 10px;
+  /* set the text decoration to none */
+  text-decoration: none;
+  /* set box shadow to black */
+  box-shadow: 2px 2px 10px blueviolet;
+
+  }
+  body {
+    /* margin: 0 auto; */
+    margin: auto;
+    background-color: darkslategray;
+    /* make the background image to repeat */
+    background-repeat: no-repeat;
+    /* set some gallery effects */
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    /* set the background color to light green */
+    background-color: lightskyblue;
+    text-align: center;
+
+   }label{
+    color: red;
+    text-align: center;
+    /* place center the text */
+    margin: 0 auto;
+    /* set the font size to 20px */
+    font-size: 20px;
+    /* set the font weight to bold */
+    font-weight: bold;
+    margin: center;
+    
+    text-shadow: black 1px 1px 5px;
+   }
+    input{
+    margin: 10 auto;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid blueviolet;
+    /* set the border radius to 10px */
+    border-radius: 20px;
+    
+   }input[type=submit]{
+    margin: 10 auto;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid blueviolet;
+    /* set the border radius to 10px */
+    border-radius: 20px;
+
+  }

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        // style my table
+        body{
+            background-color: black;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        table{
+            margin: 10px;
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            border-radius: 20px;
+            background-color: white;
+            color: rgb(190, 10, 25);
+            padding: 20px;
+            text-shadow: rgb(0, 17, 255) 1px 1px 20px;
+        }
+        tr{
+            margin: 0 auto;
+        }
+        td{
+            text-align: center;
+            margin: 0 auto;
+            border-radius: 10px;
+            font-family: monospace;
+            text-shadow: black 0px 0px 10px;
+        }
+        h1{
+            text-align: center;
+            width: 60%;
+            background-color: skyblue;
+            font-family: monospace;
+            color: white;
+            padding: 10px;
+            margin: 0 auto;
+            border-radius: 20px;
+            text-shadow: black 0px 0px 10px;
+        }
+        form{
+            margin: 0 auto;
+            width: 50%;
+            border-collapse: collapse;
+            border-radius: 20px;
+            background-color: white;
+            color: rgb(190, 10, 25);
+            padding: 15px;
+            text-shadow: rgb(0, 17, 255) 1px 1px 20px;
+        }
+        input{
+            margin: 0 auto;
+            text-align: center;
+            border-color: rgb(255, 0, 0);
+            box-sizing: 10px;
+            border-radius: 10px;
+            font-family: monospace;
+            text-shadow: black 0px 0px 10px;
+        }
+        button{
+            margin: 0 auto;
+            border-radius: 10px;
+            font-family: monospace;
+            text-shadow: black 0px 0px 10px;
+        }
+
+
+        
+    </style>
+    <title>Other state </title>
+</head>
+<body>
+    <h1>Other State Vehicle  </h1>
+    <br>
+    <br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Vehicle Number</th>
+                <th>Location</th>
+                <th>latitude</th>
+                <th>langtidue</th>
+                <th>Map</th>
+            </tr>
+        <tr>
+        {% for row in results %}
+        <tr>
+            {% if row[0].startswith != 'TN' %}
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+            <td>
+            {% endif %}
+                <form action="/map" method="POST"><input type="hidden" name="vno" value="{{ row[0] }}"><input type="submit" value="View on Map"></form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
